@@ -26,6 +26,11 @@ def shopping_cart():
 def faq():
     return render_template('faq/main.html')
 
+@app.route('/step')
+def step():
+    return render_template('integration/step.html')
+
+
 
 if __name__ == '__main__':
     app.run()
