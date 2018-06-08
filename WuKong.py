@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from database import *
+from models import *
 
 app = Flask(__name__)
 
@@ -30,6 +32,9 @@ def faq():
 def step():
     return render_template('integration/step.html')
 
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db_session.remove()
 
 
 if __name__ == '__main__':
