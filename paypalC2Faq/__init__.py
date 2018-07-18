@@ -1,12 +1,31 @@
-import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_debugtoolbar import DebugToolbarExtension
+
+from .config import config_by_name
+
+db = SQLAlchemy()
+
+toolbar = DebugToolbarExtension()
 
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-app = Flask(__name__)
-app.secret_key = b'\x08\x13\x0c\x8e\xf1\x81\x84S\xb2:1\xa3\xcb\xe9\xdc\xba'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'paypalC2Faq.db')
+def create_app(config_name):
+    app = Flask(__name__)
+    app.config.from_object(config_by_name[config_name])
+    db.init_app(app)
+    toolbar.init_app(app)
 
-app.config['DEBUG'] = True
-db = SQLAlchemy(app)
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint, url_prefix='/')
+
+    from .faq import faq_pages as faq_pages_blueprint
+    app.register_blueprint(faq_pages_blueprint, url_prefix='/faq')
+
+    from .integration import integration_pages as integration_pages_blueprint
+    app.register_blueprint(integration_pages_blueprint, url_prefix='/integration')
+
+    from .shopping_cart import shopping_cart as shopping_cart_blueprint
+    app.register_blueprint(shopping_cart_blueprint, url_prefix='/shopping-cart')
+
+    return app
+

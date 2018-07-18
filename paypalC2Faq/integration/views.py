@@ -1,5 +1,6 @@
 from flask import render_template
 from . import integration_pages
+from ..models import Integration
 
 
 @integration_pages.route('/integration')
