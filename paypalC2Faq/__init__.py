@@ -24,8 +24,8 @@ def create_app(config_name):
     from .integration import integration_pages as integration_pages_blueprint
     app.register_blueprint(integration_pages_blueprint, url_prefix='/integration')
 
-    from .shopping_cart import shopping_cart as shopping_cart_blueprint
-    app.register_blueprint(shopping_cart_blueprint, url_prefix='/shopping-cart')
+    from .shopping_cart import shopping_cart_pages as shopping_cart_pages_blueprint
+    app.register_blueprint(shopping_cart_pages_blueprint, url_prefix='/shopping-cart')
 
     return app
 

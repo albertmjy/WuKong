@@ -5,7 +5,12 @@
 <div class="container">
         <div class="row">
                 <div class="col-md-8" id="main-content">
-                  <div>Content...</div>
+                  <h1>List of Shopping Carts</h1>
+                    <ul>
+                        {% for shoping_cart in all_shopping_cart_pages %}
+                            {{ shoping_cart.title }}
+                        {% endfor %}
+                    </ul>
                 </div>
                 <div class="col-md-4" id="toc-wrapper">
                     <div class="col-md-12">

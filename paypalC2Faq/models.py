@@ -5,8 +5,8 @@ class FAQPage(db.Model):
     __tablename__ = 'faq_page'
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.String(length=8), unique=True)
-    answer = db.Column(db.Text(collation='utf8'))
-    attachment = db.Column(db.Text(collation='utf8'))
+    answer = db.Column(db.Text())
+    attachment = db.Column(db.Text())
 
     @staticmethod
     def get_all_questions():
@@ -21,17 +21,17 @@ class FAQPage(db.Model):
         return '<FAQ: %r>' % self.question
 
 
-class Integration(db.Model):
+class IntegrationPage(db.Model):
     __tablename__ = 'integration_page'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(length=8), unique=True)
-    short_description = db.Column(db.Text(length=125, collation='utf8'), unique=True)
-    description = db.Column(db.Text(collation='utf8'))
-    attachment = db.Column(db.Text(collation='utf8'))
+    short_description = db.Column(db.Text(length=125), unique=True)
+    description = db.Column(db.Text())
+    attachment = db.Column(db.Text())
 
     @staticmethod
     def get_all_pages():
-        return Integration.query.all()
+        return IntegrationPage.query.all()
 
     def __init__(self, title=None, short_description=None, description=None, attachment=None):
         self.title = title
@@ -47,9 +47,9 @@ class ShoppingCartPage(db.Model):
     __tablename__ = 'shopping_cart_page'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(length=8), unique=True)
-    short_description = db.Column(db.Text(length=125, collation='utf8'), unique=True)
-    description = db.Column(db.Text(collation='utf8'))
-    attachment = db.Column(db.Text(collation='utf8'))
+    short_description = db.Column(db.Text(length=125), unique=True)
+    description = db.Column(db.Text())
+    attachment = db.Column(db.Text())
 
     @staticmethod
     def get_all_pages():

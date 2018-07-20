@@ -1,7 +1,7 @@
 from flask import Blueprint
 
 
-shopping_cart = Blueprint('shopping_cart', __name__)
+shopping_cart_pages = Blueprint('shopping_cart_pages', __name__)
 
 
 from . import views

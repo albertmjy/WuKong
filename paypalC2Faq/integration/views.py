@@ -1,10 +1,10 @@
 from flask import render_template
 from . import integration_pages
-from ..models import Integration
+from ..models import IntegrationPage
 
 
-@integration_pages.route('/integration')
-def integration():
+@integration_pages.route('/')
+def index():
     return render_template('integration/main.html')
 
 
