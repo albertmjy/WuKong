@@ -13,4 +13,3 @@ def index():
 def cart_detail():
     pass
 
-
