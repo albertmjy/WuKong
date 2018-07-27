@@ -14,3 +14,6 @@ def cart_detail():
     pass
 
 
+@shopping_cart_pages.route('/temp-test')
+def paypal_api_test():
+    return render_template('shopping_cart/temp.html')

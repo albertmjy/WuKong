@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+        <div class="row">
+                <div class="col-md-8" id="main-content">
+
+                    <h1>GetTransactionDetails:</h1>
+
+                    <form action="https://api-3t.sandbox.paypal.com/nvp" method="post">
+                        <input type="hidden" name="USER" value="david.g.adam+seller_api1.gmail.com">
+                        <input type="hidden" name="PWD" value="2V94HFFJWPYYCBM3">
+                        <input type="hidden" name="SIGNATURE" value="A6Rvi3rGatmLsbsG55EkJs4GYiANARA9KdcLO7I3--I0I1ioCtaaD7-n">
+
+                        <input type="hidden" name="VERSION" value="78">
+                        <input type="hidden" name="METHOD" value="GetTransactionDetails">
+                        <input type="hidden" name="TRANSACTIONID" value="6TA130480N159872B">
+
+                        <button type="submit">Submit</button>
+                    </form>
+
+                    <form action="https://api-3t.sandbox.paypal.com/nvp" method="post">
+                        <input type="hidden" name="USER" value="david.g.adam+seller_api1.gmail.com">
+                        <input type="hidden" name="PWD" value="2V94HFFJWPYYCBM3">
+                        <input type="hidden" name="SIGNATURE" value="A6Rvi3rGatmLsbsG55EkJs4GYiANARA9KdcLO7I3--I0I1ioCtaaD7-n">
+
+                        <input type="hidden" name="VERSION" value="78">
+                        <input type="hidden" name="METHOD" value="GetTransactionDetails">
+                        <input type="hidden" name="TRANSACTIONID" value="1FK34137JM965735Y">
+
+                        <button type="submit">Submit Another</button>
+                    </form>
+                </div>
+                <div class="col-md-4" id="toc-wrapper">
+                    <div class="col-md-12">
+                        <h2>Platform</h2>
+                        <ul>
+                            <li>Shopfiy</li>
+                            <li>Hybris</li>
+                            <li>Demandware</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12">
+                            <h2>Self Hosted</h2>
+                            <ul>
+                                <li>Magento</li>
+                                <li>Prestatshop</li>
+                            </ul>
+                        </div>
+                </div>
+              </div>
+</div>
+{% endblock content %}
