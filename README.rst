@@ -7,7 +7,7 @@ To Start the app
 
 1.Set up Python3 and Virtual environment.
 2.CD to your project root.
-3.Run: pip install flask, flask-debugtoolbar, flask-script, flask-sqlalchemy
+3.Run: pip install -r requirements.txt
 4.Run:
     export FLASK_APP=manage
     export FLASK_ENV=development

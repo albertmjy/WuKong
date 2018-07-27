@@ -2,7 +2,6 @@ from . import db
 
 
 class FAQPage(db.Model):
-    __tablename__ = 'faq_page'
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.String(length=8), unique=True)
     answer = db.Column(db.Text())
@@ -22,7 +21,6 @@ class FAQPage(db.Model):
 
 
 class IntegrationPage(db.Model):
-    __tablename__ = 'integration_page'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(length=8), unique=True)
     short_description = db.Column(db.Text(length=125), unique=True)
@@ -44,7 +42,6 @@ class IntegrationPage(db.Model):
 
 
 class ShoppingCartPage(db.Model):
-    __tablename__ = 'shopping_cart_page'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(length=8), unique=True)
     short_description = db.Column(db.Text(length=125), unique=True)
