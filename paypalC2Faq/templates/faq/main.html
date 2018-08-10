@@ -1,1198 +1,1017 @@
 {% extends "layout.html" %}
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-     <title>Life is not esay</title>
-     <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"-->
-
-
-
-<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<script src="https://cdn.staticfile.org/angular.js/1.6.3/angular.min.js"></script-->
-<style type="text/css">
-
-    .main-text
-        {
-            position: absolute;
-            top: 50px;
-            width: 96.66666666666666%;
-            color: #FFF;
-        }
-        .btn-min-block
-        {
-            min-width: 170px;
-            line-height: 26px;
-        }
-        .btn-clear
-        {
-            color: #FFF;
-            background-color: transparent;
-            border-color: #FFF;
-            margin-right: 15px;
-        }
-        .btn-clear:hover
-        {
-            color: #000;
-            background-color: #FFF;
-        }
-
-		.search_input i{
-			position: relative;
-            right:500px;
-
-			// top: 1px;
-			// color: #B2B2B2;//这里可以更改图标的颜色
-		}
-
-     #footer {
-        position: absolute;
-        margin-left:650px;   /*footer高度的负值*/
-         margin-top:200px;
-
-        clear:both;
-        background: white;
-
-
-
-    }
-
-	</style>
-
-</head>
-<body>
-
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-{#      <a class="navbar-brand" href="#">Navbar</a>#}
-      <a class="navbar-brand" href="#">
-          <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" alt="Buy now with PayPal" />
-      </a>
-      <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button-->
-
-      <!--div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Integration</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#">Shopping Cart</a>
-          </li>
-            <li class="nav-item">
-            <a class="nav-link " href="#">MTS</a>
-          </li>
-{#          <li class="nav-item dropdown">#}
-{#            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>#}
-{#            <div class="dropdown-menu" aria-labelledby="dropdown01">#}
-{#              <a class="dropdown-item" href="#">Action</a>#}
-{#              <a class="dropdown-item" href="#">Another action</a>#}
-{#              <a class="dropdown-item" href="#">Something else here</a>#}
-{#            </div>#}
-{#          </li>#}
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div-->
-    </nav>
-
+{% block brand_carouse %}
 <!-- search bar module -->
 
-	<div class=" jumbotron">
-		<div class="containter">
+<div class=" jumbotron">
+    <div class="containter">
 
-					<p class="text" style="margin-left: 285px">输入您的问题查找答案</p>
-			<div class="col-sm-2"></div>
-			<!--div class="col-sm-10">
-					<form class="navbar-form navbar-left" role="search">
-       <div class="form-group">
-
-    <input type="text" class="form-control" style="width:600px;" id="searchfaq" placeholder="请输入查询内容">
-  </div>
-  <button type="submit" class="btn btn-default" onclick="gosearch()">Search</button>
-</form>
-			</div-->
+        <p class="text" style="margin-left: 285px">输入您的问题查找答案</p>
+        <div class="col-sm-2"></div>
 
 
-					<div class="col-sm-10">
-					<form class="navbar-form navbar-left" role="search">
-       <div class="form-group">
+        <div class="col-sm-10">
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
 
-    <input type="search" name="searchfaq" id="searchfaq" class="form-control"
-		   onfocus="setfocus(this)"
-		   oninput="setinput(this)"  style="width:600px;"  placeholder="请输入查询内容" autocomplete="off"><a href="javascript:;" class="clear">
- <i class="fa fa-search" id="i-advanced-search-i"></i>
+                    <input type="search" name="searchfaq" id="searchfaq" class="form-control"
+                           onfocus="setfocus(this)"
+                           oninput="setinput(this)" style="width:600px;" placeholder="请输入查询内容" autocomplete="off">
+                    <a href="javascript:" class="clear">
+                    <i class="fa fa-search" id="i-advanced-search-i"></i>
+                </div>
+                <br>
+                <select name="faqSe" id="typenum"
+                        onchange="changeF(this)" size="15" style="visibility:visible; display:none;width:600px;"
+                        onclick="searchresult(this)" autocomplete="off">
+                    <option>怎么样开启PayPal账户可选?</option>
+                    <option>如何在商家的网站上集成PayPal的支付按钮?</option>
+
+                    <option>如何在付款页面上定制企业Logo？</option>
+                    <option>用户成功付款后没有自动返回到商家网站上?</option>
+
+                    <option>如何设置买家跳转到PayPal支付界面的语言?</option>
+                    <option>付款失败，页面提示“字符语言编码不符”?</option>
+
+                    <option>为什么交易详情里没有显示配送地址？</option>
+                    <option>如何设置开启IPN？</option>
+
+                    <option>为什么商家会受到IPN警示邮件？</option>
+                    <option>如何启用PDT并获取身份标记（identity token)?</option>
+
+                    <option>如何申请HSS/VT权限?</option>
+                    <option>如何创建Sandbox测试账户?</option>
+
+                    <option>如何获取REST API凭证（Client ID和Secret ID）?</option>
+                    <option>如何授权第三方许可？</option>
+
+                    <option>如何获取API凭证？</option>
+                    <option>如何在我的网站集成“快速结帐”？</option>
+                    <option>如何要求买家在付款时提供电话号码？</option>
+                </select>
+            </form>
+        </div>
+     <script>
+        function searchresult(this_) {
+            var options = $("#typenum option:selected");
+            //alert(options.val());
+            var searchquestion = options.text();
+
+            if (searchquestion == "怎么样开启PayPal账户可选?") {
+                //alert("如何在商家的网站上集成PayPal的支付按钮?");
+                $('#wpscontent1').collapse('show');
+
+            } else if (searchquestion == "如何在商家的网站上集成PayPal的支付按钮?") {
+                $('#wpscontent2').collapse('show');
+            }
+            else if (searchquestion == "如何在付款页面上定制企业Logo？") {
+                $('#wpscontent4').collapse('show');
+            } else if (searchquestion == "付款失败，页面提示“字符语言编码不符”?") {
+                $('#wpscontent3').collapse('show');
+            } else if (searchquestion == "用户成功付款后没有自动返回到商家网站上?") {
+                $('#wpscontent5').collapse('show');
+            } else if (searchquestion == "如何设置买家跳转到PayPal支付界面的语言?") {
+                $('#wpscontent6').collapse('show');
+            } else if (searchquestion == "为什么交易详情里没有显示配送地址？") {
+                $('#wpscontent7').collapse('show');
+            } else if (searchquestion == "如何设置开启IPN？") {
+                $('#ipncontent2').collapse('show');
+            } else if (searchquestion == "为什么商家会受到IPN警示邮件？") {
+                $('#ipncontent1').collapse('show');
+            } else if (searchquestion == "如何启用PDT并获取身份标记（identity token)?") {
+                $('#pdtcontent1').collapse('show');
+            } else if (searchquestion == "如何申请HSS/VT权限?") {
+                $('#requestcontent1').collapse('show');
+            } else if (searchquestion == "如何创建Sandbox测试账户?") {
+                $('#requestcontent3').collapse('show');
+            } else if (searchquestion == "如何获取REST API凭证（Client ID和Secret ID）?") {
+                $('#requestcontent2').collapse('show');
+            } else if (searchquestion == "如何授权第三方许可？") {
+                $('#eccontent1').collapse('show');
+            } else if (searchquestion == "如何获取API凭证？") {
+                $('#eccontent2').collapse('show');
+            } else if (searchquestion == "如何在我的网站集成“快速结帐”？") {
+                $('#eccontent3').collapse('show');
+            } else if (searchquestion == "如何要求买家在付款时提供电话号码？") {
+                $('#eccontent4').collapse('show');
+            }
+        };
+
+    </script>
+    </div>
+</div>
+{% endblock brand_carouse %}
+
+{% block content %}
+<div class="container">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="col-sm-4">
+
+
+            <h4>商家技术问题分类</h4>
+            <ul class="nav nav-pills nav-stacked" id="accordion">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="wpslable1" data-toggle="dropdown">网站付款标准版
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="wpslable1">
+
+                        <li><a href="#wpscontent1" data-toggle="collapse" aria-expanded="false"
+                               aria-controls="wpscontent1" aria-expanded="false" data-parent="#accordion">怎么样开启PayPal账户可选?
+                        </a></li>
+
+                        <li><a a href="#wpscontent2" data-toggle="collapse" aria-expanded="false"
+                               aria-controls="wpscontent2"
+                               aria-expanded="false" data-parent="#accordion">如何在商家的网站上集成PayPal的支付按钮?</a></li>
+
+                        <li><a a href="#wpscontent3" data-toggle="collapse" aria-expanded="false"
+                               aria-controls="wpscontent3" aria-expanded="false" data-parent="#accordion">付款失败，页面提示“字符语言编码不符”?</a>
+                        </li>
+                        <li><a a href="#wpscontent4" data-toggle="collapse" aria-expanded="false"
+                               aria-controls="wpscontent4" aria-expanded="false" data-parent="#accordion">如何在付款页面上定制企业Logo？</a>
+                        </li>
+                        <li><a a href="#wpscontent5" data-toggle="collapse" aria-expanded="false"
+                               aria-controls="wpscontent5" aria-expanded="false" data-parent="#accordion">用户成功付款后没有自动返回到商家网站上?</a>
+                        </li>
+                        <li><a a href="#wpscontent6" data-toggle="collapse" aria-expanded="false"
+                               aria-controls="wpscontent6" aria-expanded="false" data-parent="#accordion">如何设置买家跳转到PayPal支付界面的语言?</a>
+                        </li>
+                        <li><a a href="#wpscontent7" data-toggle="collapse" aria-expanded="false"
+                               aria-controls="wpscontent7" aria-expanded="false" data-parent="#accordion">为什么交易详情里没有显示配送地址？</a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <!-- EC dropdown list -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="ecLabel" data-toggle="dropdown">快速结帐
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="ecLabel">
+
+                        <li><a href="#eccontent1" data-toggle="collapse" ria-expanded="false" aria-controls="eccontent1"
+                               aria-expanded="false" data-parent="#accordion">如何授权第三方许可?
+                        </a></li>
+                        <li><a href="#eccontent2" data-toggle="collapse" ria-expanded="false" aria-controls="eccontent2"
+                               aria-expanded="false" data-parent="#accordion">如何获取API凭证？</a></li>
+                        <li><a href="#eccontent3" data-toggle="collapse" ria-expanded="false" aria-controls="eccontent3"
+                               aria-expanded="false" data-parent="#accordion">如何在我的网站集成“快速结帐”？</a></li>
+                        <li><a href="#eccontent4" data-toggle="collapse" ria-expanded="false" aria-controls="eccontent4"
+                               aria-expanded="false" data-parent="#accordion">如何要求买家在付款时提供电话号码？</a></li>
+                    </ul>
+                </li>
+
+
+                <!-- IPN dropdown list -->
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="IPNLabel" data-toggle="dropdown">IPN
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="IPNLabel">
+
+                        <li><a href="#ipncontent1" data-toggle="collapse" ria-expanded="false"
+                               aria-controls="ipncontent1" aria-expanded="false" data-parent="#accordion">为什么商家会受到IPN警示邮件？
+                        </a></li>
+                        <li><a href="#ipncontent2" data-toggle="collapse" ria-expanded="false"
+                               aria-controls="ipncontent2" aria-expanded="false" data-parent="#accordion">如何设置开启IPN？</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <!-- PDT dropdown list -->
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="pdtLabel" data-toggle="dropdown">PDT
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="pdtLabel">
+
+                        <li><a href="#pdtcontent1" data-toggle="collapse" ria-expanded="false"
+                               aria-controls="pdtcontent1" aria-expanded="false" data-parent="#accordion">如何启用PDT并获取身份标记（identity
+                            token）？
+                        </a></li>
+                    </ul>
+                </li>
+                <!-- Application request -->
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="requestLabel" data-toggle="dropdown">账户权限和产品申请
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="requestLabel">
+
+                        <li><a href="#requestcontent1" data-toggle="collapse" ria-expanded="false"
+                               aria-controls="requestcontent1" aria-expanded="false" data-parent="#accordion">如何申请HSS/VT权限?
+                        </a></li>
+                        <li><a href="#requestcontent2" data-toggle="collapse" ria-expanded="false"
+                               aria-controls="requestcontent2" aria-expanded="false" data-parent="#accordion">如何获取REST
+                            API凭证（Client ID和Secret ID?
+                        </a></li>
+                        <li><a href="#requestcontent3" data-toggle="collapse" ria-expanded="false"
+                               aria-controls="requestcontent3" aria-expanded="false" data-parent="#accordion">如何创建Sandbox测试账户?
+                        </a></li>
+
+
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+
+
+        <div class="col-sm-8">
+
+            <!-- WPS FAQ -->
+
+            <div class="panel-collapse collapse" id="wpscontent1" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>怎么样开启PayPal账户可选?</h4>
+                        1. 登入PayPal账户https://www.paypal.com
+                        <br>
+                        2. 点击用户信息，选择用户信息与设置
+                        <br>
+                        3. 点击销售工具，网站习惯设定，更新
+                        <br>
+                        4. 选择PayPal账户可选，开启
+                        <br>
+                        5. 点击 "保存"
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-collapse collapse " id="wpscontent2" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何在商家的网站上集成PayPal的支付按钮?</h4>
+                        1. 登入PayPal账户https://www.paypal.com
+                        <br>
+                        2. 点击用户信息，选择用户信息与设置
+                        <br>
+                        3. 点击销售工具，PayPal按钮，更新
+                        <br>
+                        4. 创建新按钮
+                        <br>
+                        5. 通过创建按钮向导，3步完成按钮创建
+                        <br>
+                        6. 创建按钮之后，可以看到PayPal自动生成的HTML代码以及支付链接。
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-collapse collapse " id="wpscontent3" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>付款失败，页面提示“字符语言编码不符”?</h4>
+                        请在PayPal账户设置中检查确认字符语言编码：
+                        <br>
+                        1.登陆账户到www.paypal.com
+                        <br>
+                        2.点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
+                        <br>
+                        3.页面右侧底部找到“PayPal按钮语言编码”，点击并选择“更多选项”
+                        <br>
+                        4.在下拉列表中选择“UTF-8”，并保持“是否想在PayPal向您发送的数据中使用相同的编码（例如，IPN、可下载日志、电子邮件）？”勾选“是”
+                        <br>
+                        5.保存生效
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-collapse collapse " id="wpscontent4" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何在付款页面上定制企业Logo？</h4>
+                        PayPal默认会显示您的账户名（邮箱名）在结账页面的顶部。商家也可以定制此处显示企业logo图片
+                        <br>
+                        （使用在线图片资源，尺寸限制为最大190像素x60像素）
+                        <br>
+                        1. 登入PayPal账户https://www.paypal.com
+                        <br>
+                        2. 点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
+                        <br>
+                        3. 页面右侧找到“自定义付款页面”，点击“更新”链接
+                        <br>
+                        4. 点击“新增”
+                        <br>
+                        5. 设定自定义页面样式名字，并设置“标识图片URL”
+                        <br>
+                        6. 点击“预览”按钮查看效果，保存生效
+                        <br>
+                        7. 勾选刚才建立的页面样式，点击“设置为首选”
+                        <br>
+                        <br>
+                        附上PayPal logo center:
+                        https://www.paypal.com/c2/webapps/mpp/logos-buttons?locale.x=zh_C2
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-collapse collapse " id="wpscontent5" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>用户成功付款后没有自动返回到商家网站上?</h4>
+                        请检查账户设置确保”自动返回”功能已经开启
+                        <br>
+                        1.登陆账户到www.paypal.com
+                        <br>
+                        2.点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
+                        <br>
+                        3.页面右侧找到“网站习惯设定”，点击“更新”链接
+                        <br>
+                        4.勾选“自动返回：开启”
+                        <br>
+                        5.在“返回URL”中输入自动返回的地址,保存生效
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-collapse collapse " id="wpscontent6" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何设置买家跳转到PayPal支付界面的语言?</h4>
+                        在PayPal的按钮中添加参数’lc’来设置。该参数支持两位字符的值。
+                        <br>
+                        如：<input type="hidden" name="lc" value="US">
+                        <br>
+                        更多语言，请参考链接。
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-collapse collapse " id="wpscontent7" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>为什么交易详情里没有显示配送地址？</h4>
+                        请检查您的按钮代码，确保配送地址相关的参数值都已经传入，示例如下：
+                        <br>
+                        <!--input type="hidden" name="country" value="US">
+                        <input type="hidden" name="city" value="San Jose">
+                        <input type="hidden" name="state" value="CA">
+                        <input type="hidden" name="zip" value="95131">
+                        <input type="hidden" name="address1" value="1 Main St">
+                        <input type="hidden" name="address2" value="">
+                        <input type="hidden" name="no_shipping" value="2">
+                        <input type="hidden" name="address_override " value="1">-->
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- IPN FAQ -->
+
+
+            <div class="panel-collapse collapse" id="ipncontent2" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何设置开启IPN？</h4>
+                        1. 登陆账户到www.paypal.com
+                        <br>
+                        2. 点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
+                        <br>
+                        3. 页面右侧找到“即使付款通知”，点击“更新”链接
+                        <br>
+                        4. 勾选“接收即使付款通知消息（已启用）”，并填写IPN脚本地址到“通告URL”中
+                        <br>
+                        5. IPN 脚本下载地址: https://github.com/paypal/ipn-code-samples/
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel-collapse collapse" id="ipncontent1" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>为什么商家会受到IPN警示邮件？</h4>
+                        <br>
+                        当商家服务器出现不稳定或异常，导致PayPal发出的IPN消息无法正常接收时，商家账户会受到IPN警示邮件，
+                        <br>提示检查IPN和服务器设置。请商家服务器管理员协助检查，确保服务器防火墙或路由表规则没有屏蔽来自pay
+                        <br>pal.com的网络通讯，并检查IPN脚本代码，确保在收到IPN消息后返回HTTP200响应代码。
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- secondard faq content -->
+            <div class="panel-collapse collapse" id="pdtcontent1" style="transition: 1ms; transition-duration:1ms;">
+                <div class="panel" style="width: 800px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何启用PDT并获取身份标记（identity token)?</h4>
+                        1. 登陆账户到www.paypal.com
+                        <br>
+                        2. 点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
+                        <br>
+                        3. 点击“销售工具”
+                        <br>
+                        4. 页面右侧找到“网站习惯设定”，点击“更新”链接
+                        <br>
+                        5. 勾选“自动返回：开启”
+                        <br>
+                        6. 在“返回URL”中输入自动返回的地址
+                        <br>
+                        7. 下拉页面，找到“付款数据传输”，并勾选“开启”
+                        <br>
+                        8. 保存后，在此区域会显示“身份标记”，拷贝并粘贴至自动返回PDT脚本代码中用于身份验证
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Request content -->
+            <div class="panel-collapse collapse" id="requestcontent1" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何申请HSS/VT权限?</h4>
+                        HSS/VT目前在APAC地区只有香港/澳大利亚/日本可以使用. 如果上述地区的商家想申请使用,
+                        <br>建议他们到如下地址提交申请:
+                        <br>https://www.paypal-apac.com/hss/hk-en/
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel-collapse collapse" id="requestcontent3" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何创建Sandbox测试账户?</h4>
+                        创建sandbox账户指南:
+                        <br>
+                        https://developer.paypal.com/docs/classic/lifecycle/sb_create-accounts/
+                        <br>
+                        <br>Sandbox账户创建的示例:
+                        <br>
+                        https://www.paypal-knowledge.com/infocenter/index?page=content&widgetview=true&id=FAQ1497&viewlocale=en_US&direct=en
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="requestcontent2" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何获取REST API凭证（Client ID和Secret ID）?</h4>
+                        获取REST API 凭证:
+                        <br>https://www.paypal-knowledge.com/infocenter/index?page=content&id=FAQ1949&expand=true&locale=en_US
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- EC content -->
+            <div class="panel-collapse collapse" id="eccontent1" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何授权第三方许可？</h4>
+                        1. 登陆账户到www.paypal.com
+                        <br>2.点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
+                        <br>3.页面右侧找到“API访问”，点击“更新”链接
+                        <br>4.在打开页面中，选择“选项1”，点击“添加或编辑API许可”
+                        <br>5.输入您希望授权的第三方API用户名，如果不确定用户名，请联系第三方平台确认
+                        <br>6.在“可用许可”列表中，勾选您希望授权的权限许可，点击“新增”完成授权
+                        <br>7.如果不确定该授权哪些许可，请联系购物车平台或第三方系统，确认其所需权限
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel-collapse collapse" id="eccontent2" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何获取API凭证？</h4>
+                        1.登陆账户到www.paypal.com
+                        <br>2.点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
+                        <br>3.页面右侧找到“API访问”，点击“更新”链接
+                        <br>4.选择“选项2”，点击“申请API凭证”
+                        <br>5.选择左侧“申请API签名”，点击“同意并提交”完成申请
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="eccontent3" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何在我的网站集成“快速结帐”？</h4>
+                        访问PayPal开发者网站了解快速结帐产品：<br>
+                        https://developer.paypal.com/docs/classic/products/express-checkout/?mark=express%20checkout
+                        <br>访问PayPal演示网站，获取集成示例代码：
+                        <br>https://demo.paypal.com/us/demo/home
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="eccontent4" style="transition: 1ms;transition-duration:1ms;">
+                <div class="panel" style="width: 1000px;height: 500px">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">
+                        <h4>如何要求买家在付款时提供电话号码？</h4>
+                        此项功能需要在您的PayPal账户中设置开启：
+                        <br>
+                        1. 登陆账户到www.paypal.com
+                        <br>
+                        2. 点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
+                        <br>
+                        3. 页面右侧找到“网站习惯设定”，点击“更新”链接
+                        <br>
+                        4. 找到页面下方“联系电话号码”，勾选“开启（必须字段）”，保存生效
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
 
 
     </div>
-<br>
 
-		    <select name="faqSe" id="typenum"
-			onchange="changeF(this)" size="15" style="visibility:visible; display:none;width:600px;" onclick="searchresult(this)" autocomplete="off">
-        <option >怎么样开启PayPal账户可选?</option>
-        <option >如何在商家的网站上集成PayPal的支付按钮?</option>
 
-                <option >如何在付款页面上定制企业Logo？</option>
-        <option >用户成功付款后没有自动返回到商家网站上?</option>
-
-                <option >如何设置买家跳转到PayPal支付界面的语言?</option>
-        <option >付款失败，页面提示“字符语言编码不符”?</option>
-
-                <option >为什么交易详情里没有显示配送地址？</option>
-        <option >如何设置开启IPN？</option>
-
-                <option >为什么商家会受到IPN警示邮件？</option>
-        <option >如何启用PDT并获取身份标记（identity token)?</option>
-
-                <option >如何申请HSS/VT权限?</option>
-        <option >如何创建Sandbox测试账户?</option>
-
-                <option >如何获取REST API凭证（Client ID和Secret ID）?</option>
-        <option >如何授权第三方许可？</option>
-
-                <option >如何获取API凭证？</option>
-        <option >如何在我的网站集成“快速结帐”？</option>
-<option >如何要求买家在付款时提供电话号码？</option>
-
-
-
-    </select>
-  </div>
-
-
-</form>
-			</div>
-
-  <script>
-  	function searchresult(this_) {
-        var options = $("#typenum option:selected");
-        //alert(options.val());
-        var searchquestion = options.text();
-
-        if (searchquestion == "怎么样开启PayPal账户可选?") {
-            //alert("如何在商家的网站上集成PayPal的支付按钮?");
-            $('#wpscontent1').collapse('show');
-
-        } else if (searchquestion == "如何在商家的网站上集成PayPal的支付按钮?") {
-            $('#wpscontent2').collapse('show');
-        }
-        else if (searchquestion == "如何在付款页面上定制企业Logo？") {
-            $('#wpscontent4').collapse('show');
-        } else if (searchquestion == "付款失败，页面提示“字符语言编码不符”?") {
-            $('#wpscontent3').collapse('show');
-        } else if (searchquestion == "用户成功付款后没有自动返回到商家网站上?") {
-            $('#wpscontent5').collapse('show');
-        } else if (searchquestion == "如何设置买家跳转到PayPal支付界面的语言?") {
-            $('#wpscontent6').collapse('show');
-        } else if (searchquestion == "为什么交易详情里没有显示配送地址？") {
-            $('#wpscontent7').collapse('show');
-        } else if (searchquestion == "如何设置开启IPN？") {
-            $('#ipncontent2').collapse('show');
-        } else if (searchquestion == "为什么商家会受到IPN警示邮件？") {
-            $('#ipncontent1').collapse('show');
-        } else if (searchquestion == "如何启用PDT并获取身份标记（identity token)?") {
-            $('#pdtcontent1').collapse('show');
-        } else if (searchquestion == "如何申请HSS/VT权限?") {
-            $('#requestcontent1').collapse('show');
-        } else if (searchquestion == "如何创建Sandbox测试账户?") {
-            $('#requestcontent3').collapse('show');
-        } else if (searchquestion == "如何获取REST API凭证（Client ID和Secret ID）?") {
-            $('#requestcontent2').collapse('show');
-        } else if (searchquestion == "如何授权第三方许可？") {
-            $('#eccontent1').collapse('show');
-        } else if (searchquestion == "如何获取API凭证？") {
-            $('#eccontent2').collapse('show');
-        } else if (searchquestion == "如何在我的网站集成“快速结帐”？") {
-            $('#eccontent3').collapse('show');
-        } else if (searchquestion == "如何要求买家在付款时提供电话号码？") {
-            $('#eccontent4').collapse('show');
-        }
-    };
-
-
-
-
-
-
-  </script>
-
-
-
-
-
-
-
-	</div>
-	</div>
-<!--navigation bar -->
-
-	<div class="container">
-		<div class="col-sm-1"></div>
-		<div class="col-sm-10">
-			<div class="col-sm-4" >
-
-
-
-				<h4>商家技术问题分类</h4>
-				<ul class="nav nav-pills nav-stacked" id="accordion"  >
-                    <li class="dropdown">
-					 	<a href="#" class="dropdown-toggle" id="wpslable1" data-toggle="dropdown">网站付款标准版
-					 		<span class="caret"></span>
-					 	</a>
-					 	<ul class="dropdown-menu" role="menu" aria-labelledby="wpslable1">
-
-					 	<li><a href="#wpscontent1" data-toggle="collapse" aria-expanded="false"
-                               aria-controls="wpscontent1" aria-expanded="false" data-parent="#accordion" >怎么样开启PayPal账户可选?
-					 	 </a></li>
-
-					 	 <li><a a href="#wpscontent2" data-toggle="collapse" aria-expanded="false" aria-controls="wpscontent2"
-                                aria-expanded="false" data-parent="#accordion">如何在商家的网站上集成PayPal的支付按钮?</a></li>
-
-					 	  <li><a a href="#wpscontent3" data-toggle="collapse" aria-expanded="false" aria-controls="wpscontent3" aria-expanded="false" data-parent="#accordion">付款失败，页面提示“字符语言编码不符”?</a></li>
-					 	   <li><a a href="#wpscontent4" data-toggle="collapse" aria-expanded="false" aria-controls="wpscontent4" aria-expanded="false" data-parent="#accordion">如何在付款页面上定制企业Logo？</a></li>
-					 	    <li><a a href="#wpscontent5" data-toggle="collapse" aria-expanded="false" aria-controls="wpscontent5" aria-expanded="false" data-parent="#accordion">用户成功付款后没有自动返回到商家网站上?</a></li>
-					 	     <li><a a href="#wpscontent6" data-toggle="collapse" aria-expanded="false" aria-controls="wpscontent6" aria-expanded="false" data-parent="#accordion">如何设置买家跳转到PayPal支付界面的语言?</a></li>
-					 	      <li><a a href="#wpscontent7" data-toggle="collapse" aria-expanded="false" aria-controls="wpscontent7" aria-expanded="false" data-parent="#accordion">为什么交易详情里没有显示配送地址？</a></li>
-
-
-
-					 	</ul>
-					 </li>
-
-					 <!-- EC dropdown list -->
-					 	<li class="dropdown">
-					 	<a href="#" class="dropdown-toggle" id="ecLabel" data-toggle="dropdown">快速结帐
-					 		<span class="caret"></span>
-					 	</a>
-					 	<ul class="dropdown-menu" role="menu" aria-labelledby="ecLabel">
-
-					 	<li><a href="#eccontent1" data-toggle="collapse" ria-expanded="false" aria-controls="eccontent1" aria-expanded="false" data-parent="#accordion" >如何授权第三方许可?
-					 	 </a></li>
-					 	 <li><a href="#eccontent2" data-toggle="collapse" ria-expanded="false" aria-controls="eccontent2" aria-expanded="false" data-parent="#accordion">如何获取API凭证？</a></li>
-					 	 <li><a href="#eccontent3" data-toggle="collapse" ria-expanded="false" aria-controls="eccontent3" aria-expanded="false" data-parent="#accordion">如何在我的网站集成“快速结帐”？</a></li>
-					 	 <li><a href="#eccontent4" data-toggle="collapse" ria-expanded="false" aria-controls="eccontent4" aria-expanded="false" data-parent="#accordion">如何要求买家在付款时提供电话号码？</a></li>
-					 	</ul>
-					 </li>
-
-
-
-
-
-					<!-- IPN dropdown list -->
-
-					<li class="dropdown">
-					 	<a href="#" class="dropdown-toggle" id="IPNLabel" data-toggle="dropdown">IPN
-					 		<span class="caret"></span>
-					 	</a>
-					 	<ul class="dropdown-menu" role="menu" aria-labelledby="IPNLabel">
-
-					 	<li><a href="#ipncontent1" data-toggle="collapse" ria-expanded="false" aria-controls="ipncontent1" aria-expanded="false" data-parent="#accordion" >为什么商家会受到IPN警示邮件？
-					 	 </a></li>
-					 	 <li><a href="#ipncontent2" data-toggle="collapse" ria-expanded="false" aria-controls="ipncontent2" aria-expanded="false" data-parent="#accordion">如何设置开启IPN？</a></li>
-					 	</ul>
-					 </li>
-
-
-					<!-- PDT dropdown list -->
-
-					 <li class="dropdown">
-					 	<a href="#" class="dropdown-toggle" id="pdtLabel" data-toggle="dropdown">PDT
-					 		<span class="caret"></span>
-					 	</a>
-					 	<ul class="dropdown-menu" role="menu" aria-labelledby="pdtLabel">
-
-					 	<li><a href="#pdtcontent1" data-toggle="collapse" ria-expanded="false" aria-controls="pdtcontent1" aria-expanded="false" data-parent="#accordion" >如何启用PDT并获取身份标记（identity token）？
-					 	 </a></li>
-					 	</ul>
-					 </li>
-					 <!-- Application request -->
-
-
- <li class="dropdown">
-					 	<a href="#" class="dropdown-toggle" id="requestLabel" data-toggle="dropdown">账户权限和产品申请
-					 		<span class="caret"></span>
-					 	</a>
-					 	<ul class="dropdown-menu" role="menu" aria-labelledby="requestLabel">
-
-					 	<li><a href="#requestcontent1" data-toggle="collapse" ria-expanded="false" aria-controls="requestcontent1" aria-expanded="false" data-parent="#accordion" >如何申请HSS/VT权限?
-					 	 </a></li>
-					 	 <li><a href="#requestcontent2" data-toggle="collapse" ria-expanded="false" aria-controls="requestcontent2" aria-expanded="false" data-parent="#accordion" >如何获取REST API凭证（Client ID和Secret ID?
-					 	 </a></li>
-					 	 <li><a href="#requestcontent3" data-toggle="collapse" ria-expanded="false" aria-controls="requestcontent3" aria-expanded="false" data-parent="#accordion" >如何创建Sandbox测试账户?
-					 	 </a></li>
-
-
-
-
-					 	</ul>
-					 </li>
-
-
-					 </ul>
-					</div>
-
-
-
-		 <div class="col-sm-8">
-
-		 	<!-- WPS FAQ -->
-
-		 		 	<div class="panel-collapse collapse" id="wpscontent1" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>怎么样开启PayPal账户可选?</h4>
-		 				1. 登入PayPal账户https://www.paypal.com
-		 				<br>
-		 				2. 点击用户信息，选择用户信息与设置
-		 				<br>
-		 				3. 点击销售工具，网站习惯设定，更新
-		 				<br>
-		 				4. 选择PayPal账户可选，开启
-		 				<br>
-		 				5. 点击 "保存"
-		 			</div>
-		 		</div>
-		 	</div>
-
-		 	 	<div class="panel-collapse collapse " id="wpscontent2" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body" >
-		 				<h4>如何在商家的网站上集成PayPal的支付按钮?</h4>
-		 				1. 登入PayPal账户https://www.paypal.com
-		 				<br>
-		 				2. 点击用户信息，选择用户信息与设置
-		 				<br>
-		 				3. 点击销售工具，PayPal按钮，更新
-		 				<br>
-		 				4. 创建新按钮
-		 				<br>
-		 				5. 通过创建按钮向导，3步完成按钮创建
-		 				<br>
-		 				6. 创建按钮之后，可以看到PayPal自动生成的HTML代码以及支付链接。
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-		 		 	<div class="panel-collapse collapse " id="wpscontent3" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body" >
-		 				<h4>付款失败，页面提示“字符语言编码不符”?</h4>
-		 				请在PayPal账户设置中检查确认字符语言编码：
-		 				<br>
-		 				1.登陆账户到www.paypal.com
-		 				<br>
-		 				2.点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
-		 				<br>
-		 				3.页面右侧底部找到“PayPal按钮语言编码”，点击并选择“更多选项”
-		 				<br>
-		 				4.在下拉列表中选择“UTF-8”，并保持“是否想在PayPal向您发送的数据中使用相同的编码（例如，IPN、可下载日志、电子邮件）？”勾选“是”
-		 				<br>
-		 				5.保存生效
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-	 	<div class="panel-collapse collapse " id="wpscontent4" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>如何在付款页面上定制企业Logo？</h4>
-		 				PayPal默认会显示您的账户名（邮箱名）在结账页面的顶部。商家也可以定制此处显示企业logo图片
-		 				<br>
-		 				（使用在线图片资源，尺寸限制为最大190像素x60像素）
-		 				<br>
-		 				1. 登入PayPal账户https://www.paypal.com
-		 				<br>
-		 				2. 点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
-		 				<br>
-		 				3. 页面右侧找到“自定义付款页面”，点击“更新”链接
-		 				<br>
-		 				4. 点击“新增”
-		 				<br>
-		 				5. 设定自定义页面样式名字，并设置“标识图片URL”
-		 				<br>
-		 				6.	点击“预览”按钮查看效果，保存生效
-		 				<br>
-		 				7.	勾选刚才建立的页面样式，点击“设置为首选”
-		 				<br>
-		 				<br>
-		 				附上PayPal logo center:
-		 				https://www.paypal.com/c2/webapps/mpp/logos-buttons?locale.x=zh_C2
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-	 	<div class="panel-collapse collapse " id="wpscontent5" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>用户成功付款后没有自动返回到商家网站上?</h4>
-		 				请检查账户设置确保”自动返回”功能已经开启
-		 				<br>
-		 				1.登陆账户到www.paypal.com
-		 				<br>
-		 				2.点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
-		 				<br>
-		 				3.页面右侧找到“网站习惯设定”，点击“更新”链接
-		 				<br>
-		 				4.勾选“自动返回：开启”
-		 				<br>
-		 				5.在“返回URL”中输入自动返回的地址,保存生效
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-	 	<div class="panel-collapse collapse " id="wpscontent6" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>如何设置买家跳转到PayPal支付界面的语言?</h4>
-		 				在PayPal的按钮中添加参数’lc’来设置。该参数支持两位字符的值。
-		 				<br>
-		 				如：<input type="hidden" name="lc" value="US">
-		 				<br>
-		 				更多语言，请参考链接。
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-	 	<div class="panel-collapse collapse " id="wpscontent7" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>为什么交易详情里没有显示配送地址？</h4>
-		 				请检查您的按钮代码，确保配送地址相关的参数值都已经传入，示例如下：
-		 				<br>
-		 				<!--input type="hidden" name="country" value="US">
-<input type="hidden" name="city" value="San Jose">
-<input type="hidden" name="state" value="CA">
-<input type="hidden" name="zip" value="95131">
-<input type="hidden" name="address1" value="1 Main St">
-<input type="hidden" name="address2" value="">
-<input type="hidden" name="no_shipping" value="2">
-<input type="hidden" name="address_override " value="1"-->
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-
-
-
-		 	<!-- IPN FAQ -->
-
-
-
-
-		 	<div class="panel-collapse collapse" id="ipncontent2" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>如何设置开启IPN？</h4>
-		 				1.	登陆账户到www.paypal.com
-		 				<br>
-		 				2.	点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
-		 				<br>
-		 				3.	页面右侧找到“即使付款通知”，点击“更新”链接
-		 				<br>
-		 				4.	勾选“接收即使付款通知消息（已启用）”，并填写IPN脚本地址到“通告URL”中
-		 				<br>
-		 				5.	IPN 脚本下载地址: https://github.com/paypal/ipn-code-samples/
-
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-
-		 	<div class="panel-collapse collapse" id="ipncontent1" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>为什么商家会受到IPN警示邮件？</h4>
-		 				<br>
-		 				当商家服务器出现不稳定或异常，导致PayPal发出的IPN消息无法正常接收时，商家账户会受到IPN警示邮件，
-		 				<br>提示检查IPN和服务器设置。请商家服务器管理员协助检查，确保服务器防火墙或路由表规则没有屏蔽来自pay
-		 				<br>pal.com的网络通讯，并检查IPN脚本代码，确保在收到IPN消息后返回HTTP200响应代码。
-
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-<!-- secondard faq content -->
-		 	<div class="panel-collapse collapse" id="pdtcontent1" style="transition: 1ms; transition-duration:1ms;">
-		 		<div class="panel" style="width: 800px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>如何启用PDT并获取身份标记（identity token)?</h4>
-		 					1. 登陆账户到www.paypal.com
-		 					<br>
-		 					2. 点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
-		 					<br>
-		 					3. 点击“销售工具”
-		 					<br>
-		 					4. 页面右侧找到“网站习惯设定”，点击“更新”链接
-		 					<br>
-		 					5. 勾选“自动返回：开启”
-		 					<br>
-		 					6. 在“返回URL”中输入自动返回的地址
-		 					<br>
-		 					7. 下拉页面，找到“付款数据传输”，并勾选“开启”
-		 					<br>
-		 					8. 保存后，在此区域会显示“身份标记”，拷贝并粘贴至自动返回PDT脚本代码中用于身份验证
-
-
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-		 	<!-- Request content -->
-		 	 	<div class="panel-collapse collapse" id="requestcontent1" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>如何申请HSS/VT权限?</h4>
-		 				HSS/VT目前在APAC地区只有香港/澳大利亚/日本可以使用. 如果上述地区的商家想申请使用,
-		 				<br>建议他们到如下地址提交申请:
-		 				<br>https://www.paypal-apac.com/hss/hk-en/
-
-
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-
-		 	 	<div class="panel-collapse collapse" id="requestcontent3" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>如何创建Sandbox测试账户?</h4>
-		 				创建sandbox账户指南:
-		 				<br>
-		 				https://developer.paypal.com/docs/classic/lifecycle/sb_create-accounts/
-		 				<br>
-		 				<br>Sandbox账户创建的示例:
-		 				<br>
-		 				https://www.paypal-knowledge.com/infocenter/index?page=content&widgetview=true&id=FAQ1497&viewlocale=en_US&direct=en
-
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-		 	 	<div class="panel-collapse collapse" id="requestcontent2" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body" >
-		 				<h4>如何获取REST API凭证（Client ID和Secret ID）?</h4>
-		 				获取REST API 凭证:
-		 				<br>https://www.paypal-knowledge.com/infocenter/index?page=content&id=FAQ1949&expand=true&locale=en_US
-
-
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-		 		 	<!-- EC content -->
-		 	 	<div class="panel-collapse collapse" id="eccontent1" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>如何授权第三方许可？</h4>
-		 				1. 登陆账户到www.paypal.com
-		 				<br>2.点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
-	<br>3.页面右侧找到“API访问”，点击“更新”链接
-<br>4.在打开页面中，选择“选项1”，点击“添加或编辑API许可”
-<br>5.输入您希望授权的第三方API用户名，如果不确定用户名，请联系第三方平台确认
-<br>6.在“可用许可”列表中，勾选您希望授权的权限许可，点击“新增”完成授权
-<br>7.如果不确定该授权哪些许可，请联系购物车平台或第三方系统，确认其所需权限
-
-
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-
-		 		 	<div class="panel-collapse collapse" id="eccontent2" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>如何获取API凭证？</h4>
-	1.登陆账户到www.paypal.com
-	<br>2.点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
-<br>3.页面右侧找到“API访问”，点击“更新”链接
-<br>4.选择“选项2”，点击“申请API凭证”
-<br>5.选择左侧“申请API签名”，点击“同意并提交”完成申请
-
-
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-		 		 	<div class="panel-collapse collapse" id="eccontent3" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>如何在我的网站集成“快速结帐”？</h4>
-		 			访问PayPal开发者网站了解快速结帐产品：<br>
-		 			https://developer.paypal.com/docs/classic/products/express-checkout/?mark=express%20checkout
-	<br>访问PayPal演示网站，获取集成示例代码：
-	<br>https://demo.paypal.com/us/demo/home
-
-
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-		 		 	<div class="panel-collapse collapse" id="eccontent4" style="transition: 1ms;transition-duration:1ms;">
-		 		<div class="panel" style="width: 1000px;height: 500px">
-		 			<div class="panel-header"></div>
-		 			<div class="panel-body"  >
-		 				<h4>如何要求买家在付款时提供电话号码？</h4>
-		 				此项功能需要在您的PayPal账户中设置开启：
-		 				<br>
-1.	登陆账户到www.paypal.com
-<br>
-2.	点击右上方“用户信息”〉“用户信息与设置”，在打开的页面中，点击左侧“销售工具”菜单
-<br>
-3. 	页面右侧找到“网站习惯设定”，点击“更新”链接
-<br>
-4.	找到页面下方“联系电话号码”，勾选“开启（必须字段）”，保存生效
-
-
-
-
-		 			</div>
-		 		</div>
-		 	</div>
-
-
-
-		 </div>
-
-
-		</div>
-
-
-
-		<div class="col-sm-1"></div>
-
-
-
+    <div class="col-sm-1"></div>
 
 
 </div>
 
-
 <script type="text/javascript">
-$(function () { $('#ipncontent1').collapse({
-toggle: false
-})});
-//$(function () { $('#faqcontent2').collapse('show')});
-//$(function () { $('#collapseThree').collapse('toggle')});
-//$(function () { $('#collapseOne').collapse('hide')});
+    $(function () {
+        $('#ipncontent1').collapse({
+            toggle: false
+        })
+    });
+    //$(function () { $('#faqcontent2').collapse('show')});
+    //$(function () { $('#collapseThree').collapse('toggle')});
+    //$(function () { $('#collapseOne').collapse('hide')});
 
 
+    //faqcontent hide
+    $(function () {
+        $('#ipncontent1').on('show.bs.collapse', function () {
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
 
 
-//faqcontent hide
-$(function () {
-$('#ipncontent1').on('show.bs.collapse', function () {
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
+    //faqcontent2 hide
+    $(function () {
+        $('#ipncontent2').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
 
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
+    //WPS FAQ1 show
+    $(function () {
+        $('#wpscontent1').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
 
+    //WPS FAQ2 show
+    $(function () {
+        $('#wpscontent2').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
 
-//faqcontent2 hide
-$(function () {
-$('#ipncontent2').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
+    $(function () {
+        $('#wpscontent3').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
+    $(function () {
+        $('#wpscontent4').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
+    $(function () {
+        $('#wpscontent5').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
+    $(function () {
+        $('#wpscontent6').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
+    $(function () {
+        $('#wpscontent7').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
 
-//WPS FAQ1 show
-$(function () {
-$('#wpscontent1').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-
-//WPS FAQ2 show
-$(function () {
-$('#wpscontent2').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-
-$(function () {
-$('#wpscontent3').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-$(function () {
-$('#wpscontent4').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-$(function () {
-$('#wpscontent5').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-$(function () {
-$('#wpscontent6').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-$(function () {
-$('#wpscontent7').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-
-//pdt function
-$(function () {
-$('#pdtcontent1').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
+    //pdt function
+    $(function () {
+        $('#pdtcontent1').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
 
 
-//request function
-$(function () {
-$('#requestcontent1').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
+    //request function
+    $(function () {
+        $('#requestcontent1').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
 
-$(function () {
-$('#requestcontent2').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
+    $(function () {
+        $('#requestcontent2').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
 
-$(function () {
-$('#requestcontent3').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
+    $(function () {
+        $('#requestcontent3').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
 
 
-//EC function
-$(function () {
-$('#eccontent1').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-$(function () {
-$('#eccontent2').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-$(function () {
-$('#eccontent3').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent4').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-$(function () {
-$('#eccontent4').on('show.bs.collapse', function () {
-$('#ipncontent1').collapse('hide');
-$('#ipncontent2').collapse('hide');
-$('#wpscontent1').collapse('hide');
-$('#wpscontent2').collapse('hide');
-$('#wpscontent3').collapse('hide');
-$('#wpscontent4').collapse('hide');
-$('#wpscontent5').collapse('hide');
-$('#wpscontent6').collapse('hide');
-$('#wpscontent7').collapse('hide');
-$('#pdtcontent1').collapse('hide');
-$('#requestcontent2').collapse('hide');
-$('#requestcontent3').collapse('hide');
-$('#eccontent2').collapse('hide');
-$('#eccontent3').collapse('hide');
-$('#eccontent1').collapse('hide');
-	//alert('嘿，当您展开时会提示本警告');
-})
-});
-
-
+    //EC function
+    $(function () {
+        $('#eccontent1').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
+    $(function () {
+        $('#eccontent2').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
+    $(function () {
+        $('#eccontent3').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent4').collapse('hide');
+        })
+    });
+    $(function () {
+        $('#eccontent4').on('show.bs.collapse', function () {
+            $('#ipncontent1').collapse('hide');
+            $('#ipncontent2').collapse('hide');
+            $('#wpscontent1').collapse('hide');
+            $('#wpscontent2').collapse('hide');
+            $('#wpscontent3').collapse('hide');
+            $('#wpscontent4').collapse('hide');
+            $('#wpscontent5').collapse('hide');
+            $('#wpscontent6').collapse('hide');
+            $('#wpscontent7').collapse('hide');
+            $('#pdtcontent1').collapse('hide');
+            $('#requestcontent2').collapse('hide');
+            $('#requestcontent3').collapse('hide');
+            $('#eccontent2').collapse('hide');
+            $('#eccontent3').collapse('hide');
+            $('#eccontent1').collapse('hide');
+        })
+    });
 
 
 </script>
-
-<!-- search function start -->
 
 <script>
 
-function gosearch(){
-if (searchfaq.value==""){
-	alert ("请输入查找的内容！");
-	return false;
-	}elseif(searchfaq.value=="如何在商家的网站上集成PayPal的支付按钮?"){
-			alert("如何在商家的网站上集成PayPal的支付按钮?");
-		}
+    function gosearch() {
+        if (searchfaq.value == "") {
+            alert("请输入查找的内容！");
+            return false;
+        }
+        elseif(searchfaq.value == "如何在商家的网站上集成PayPal的支付按钮?")
+        {
+            alert("如何在商家的网站上集成PayPal的支付按钮?");
+        }
 
-};
-
+    };
 
 
 </script>
 
 
+<script>
 
-	<script>
+    var TempArr = [];//存储option
 
-		var TempArr=[];//存储option
-
-$(function(){
-    /*先将数据存入数组*/
-    $("#typenum option").each(function(index, el) {
-        TempArr[index] = $(this).text();
-    });
-    $(document).bind('click', function(e) {
-        var e = e || window.event; //浏览器兼容性
-        var elem = e.target || e.srcElement;
-        while (elem) { //循环判断至跟节点，防止点击的是div子元素
-            if (elem.id && (elem.id == 'typenum' || elem.id == "searchfaq")) {
-                return;
+    $(function () {
+        /*先将数据存入数组*/
+        $("#typenum option").each(function (index, el) {
+            TempArr[index] = $(this).text();
+        });
+        $(document).bind('click', function (e) {
+            var e = e || window.event; //浏览器兼容性
+            var elem = e.target || e.srcElement;
+            while (elem) { //循环判断至跟节点，防止点击的是div子元素
+                if (elem.id && (elem.id == 'typenum' || elem.id == "searchfaq")) {
+                    return;
+                }
+                elem = elem.parentNode;
             }
-            elem = elem.parentNode;
-        }
-        $('#typenum').css('display', 'none'); //点击的不是div或其子元素
-    });
-})
+            $('#typenum').css('display', 'none'); //点击的不是div或其子元素
+        });
+    })
 
-function changeF(this_) {
-    $(this_).prev("input").val($(this_).find("option:selected").text());
-    $("#typenum").css({"display":"none"});
-    $("#searchfaq").val($("#typenum").find("option:selected").text());
+    function changeF(this_) {
+        $(this_).prev("input").val($(this_).find("option:selected").text());
+        $("#typenum").css({"display": "none"});
+        $("#searchfaq").val($("#typenum").find("option:selected").text());
 
 
-}
-function setfocus(this_){
-    $("#typenum").css({"display":"none"});
-    var select = $("#typenum");
-    for(i=0;i<TempArr.length;i++){
-        var option = $("<option></option>").text(TempArr[i]);
-        select.append(option);
     }
-}
 
-function setinput(this_){
-	 $("#typenum").css({"display":""});
-    var select = $("#typenum");
-    select.html("");
-    for(i=0;i<TempArr.length;i++){
-        //若找到以txt的内容开头的，添option
-        if(TempArr[i].substring(0,this_.value.length).indexOf(this_.value)==0){
+    function setfocus(this_) {
+        $("#typenum").css({"display": "none"});
+        var select = $("#typenum");
+        for (i = 0; i < TempArr.length; i++) {
             var option = $("<option></option>").text(TempArr[i]);
             select.append(option);
         }
     }
-}
-	</script>
 
-	<!-- search function end -->
+    function setinput(this_) {
+        $("#typenum").css({"display": ""});
+        var select = $("#typenum");
+        select.html("");
+        for (i = 0; i < TempArr.length; i++) {
+            //若找到以txt的内容开头的，添option
+            if (TempArr[i].substring(0, this_.value.length).indexOf(this_.value) == 0) {
+                var option = $("<option></option>").text(TempArr[i]);
+                select.append(option);
+            }
+        }
+    }
+</script>
 
-
-   <footer id="footer">
-      <p align="center">&copy; Company 2017-2018</p>
-    </footer>
-
-
-
-</body>
-</html>
+<!-- search function end -->
+{% endblock content %}
