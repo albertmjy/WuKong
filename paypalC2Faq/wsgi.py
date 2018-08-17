@@ -3,4 +3,4 @@ import os
 from paypalC2Faq import create_app
 
 
-application = create_app('development')
+application = create_app('production')
