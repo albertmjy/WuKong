@@ -6,9 +6,9 @@
         <div class="row">
                 <div class="col-md-8" id="main-content">
                   <h1>List of Shopping Carts</h1>
-                    <ul>
+                    <li>
                         {% for shoping_cart in all_shopping_cart_pages %}
-                            {{ shoping_cart.title }}
+                            <li>{{ shoping_cart.title }}</li>
                         {% endfor %}
                     </ul>
                 </div>
