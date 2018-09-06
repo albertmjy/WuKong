@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+        <div class="row">
+                <div class="col-md-8" id="main-content">
+                  <h1>Generated Address:</h1>
+                    <ul>
+                            <li>
+                                <address>
+                                    426 Jordy Lodge
+                                    Cartwrightshire, SC 88120-6700
+                                </address>
+                            </li>
+                    </ul>
+                </div>
+                <div class="col-md-4" id="toc-wrapper">
+                    <div class="col-md-12">
+                        <h2>Choose the country you want to generate the Address</h2>
+                        <ul>
+                            {% for country_locale in country_locales %}
+                                <li>{{ country_locale }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+              </div>
+</div>
+{% endblock content %}

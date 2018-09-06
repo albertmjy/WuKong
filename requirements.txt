@@ -1,5 +1,6 @@
 -c constraints.txt
 
+bs4
 gunicorn
 alembic==1.0.0
 blinker==1.4
